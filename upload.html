@@ -1,0 +1,284 @@
+
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+
+  <title>Upload Video • StreamTube</title>
+
+  <link rel="stylesheet" href="style.css">
+
+  <style>
+    .upload-page {
+      max-width: 850px;
+      margin: 35px auto;
+      padding: 0 20px 50px;
+    }
+
+    .upload-header {
+      margin-bottom: 25px;
+    }
+
+    .upload-header h1 {
+      margin: 0 0 8px;
+      font-size: 32px;
+      font-weight: 700;
+    }
+
+    .upload-header p {
+      margin: 0;
+      color: #777;
+      font-size: 15px;
+    }
+
+    .upload-card {
+      background: #fff;
+      border: 1px solid #e5e5e5;
+      border-radius: 16px;
+      padding: 30px;
+      box-shadow: 0 8px 30px rgba(0,0,0,.07);
+    }
+
+    .field {
+      margin-bottom: 22px;
+    }
+
+    .field label {
+      display: block;
+      margin-bottom: 8px;
+      font-size: 14px;
+      font-weight: 600;
+      color: #222;
+    }
+
+    .field input[type="text"],
+    .field input[type="file"],
+    .field textarea,
+    .field select {
+      width: 100%;
+      padding: 13px 14px;
+      border: 1px solid #d8d8d8;
+      border-radius: 10px;
+      background: #fafafa;
+      font-size: 15px;
+      outline: none;
+      transition: .2s;
+    }
+
+    .field input:focus,
+    .field textarea:focus,
+    .field select:focus {
+      border-color: #ff2b2b;
+      background: #fff;
+      box-shadow: 0 0 0 3px rgba(255,43,43,.10);
+    }
+
+    .field textarea {
+      min-height: 130px;
+      resize: vertical;
+      font-family: inherit;
+    }
+
+    .field input[type="file"] {
+      padding: 11px;
+      cursor: pointer;
+    }
+
+    .field-help {
+      display: block;
+      margin-top: 6px;
+      font-size: 12px;
+      color: #888;
+    }
+
+    .upload-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 18px;
+    }
+
+    .upload-submit {
+      width: 100%;
+      border: none;
+      border-radius: 10px;
+      padding: 15px 20px;
+      background: #ff2b2b;
+      color: #fff;
+      font-size: 16px;
+      font-weight: 700;
+      cursor: pointer;
+      transition: .2s;
+      margin-top: 5px;
+    }
+
+    .upload-submit:hover {
+      background: #e51f1f;
+      transform: translateY(-1px);
+      box-shadow: 0 7px 18px rgba(255,43,43,.25);
+    }
+
+    .upload-submit:active {
+      transform: translateY(0);
+      box-shadow: none;
+    }
+
+    #msg {
+      margin-bottom: 18px;
+    }
+
+    @media (max-width: 650px) {
+      .upload-page {
+        margin-top: 20px;
+        padding: 0 12px 30px;
+      }
+
+      .upload-card {
+        padding: 20px;
+        border-radius: 12px;
+      }
+
+      .upload-header h1 {
+        font-size: 25px;
+      }
+
+      .upload-row {
+        grid-template-columns: 1fr;
+        gap: 0;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+<header class="top">
+
+  <a class="logo" href="index.html">
+    StreamTube
+  </a>
+
+  <div class="search">
+    <input id="searchInput" placeholder="Search">
+    <button id="searchBtn">Search</button>
+  </div>
+
+  <div class="actions" id="actions"></div>
+
+</header>
+
+<main class="upload-page">
+
+  <div class="upload-header">
+    <h1>Upload Video</h1>
+    <p>Share your video with the StreamTube community.</p>
+  </div>
+
+  <section class="upload-card">
+
+    <div id="msg"></div>
+
+    <form id="form">
+
+      <div class="field">
+        <label for="video">Video File</label>
+
+        <input
+          id="video"
+          type="file"
+          name="video"
+          accept="video/*"
+          required
+        >
+
+        <span class="field-help">
+          Select the video you want to upload.
+        </span>
+      </div>
+
+      <div class="field">
+        <label for="thumbnail">Thumbnail</label>
+
+        <input
+          id="thumbnail"
+          type="file"
+          name="thumbnail"
+          accept="image/jpeg,image/png,image/webp"
+        >
+
+        <span class="field-help">
+          JPG, PNG or WebP thumbnail.
+        </span>
+      </div>
+
+      <div class="field">
+        <label for="title">Video Title</label>
+
+        <input
+          id="title"
+          type="text"
+          name="title"
+          maxlength="150"
+          placeholder="Enter your video title"
+          required
+        >
+      </div>
+
+      <div class="field">
+        <label for="description">Description</label>
+
+        <textarea
+          id="description"
+          name="description"
+          maxlength="5000"
+          placeholder="Tell viewers about your video..."
+        ></textarea>
+      </div>
+
+      <div class="upload-row">
+
+        <div class="field">
+          <label for="category">Category</label>
+
+          <select id="category" name="category">
+            <option value="Other">Other</option>
+            <option value="Music">Music</option>
+            <option value="Gaming">Gaming</option>
+            <option value="Education">Education</option>
+            <option value="Comedy">Comedy</option>
+            <option value="News">News</option>
+          </select>
+        </div>
+
+        <div class="field">
+          <label for="visibility">Visibility</label>
+
+          <select id="visibility" name="visibility">
+            <option value="public">Public</option>
+            <option value="unlisted">Unlisted</option>
+            <option value="private">Private</option>
+          </select>
+        </div>
+
+      </div>
+
+      <button
+        class="upload-submit"
+        type="submit"
+      >
+        Upload Video
+      </button>
+
+    </form>
+
+  </section>
+
+</main>
+
+<script src="app.js"></script>
+<script src="upload-handler.js"></script>
+
+</body>
+</html>
+```

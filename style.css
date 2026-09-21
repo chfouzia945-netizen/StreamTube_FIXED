@@ -1,0 +1,962 @@
+*{
+  box-sizing:border-box;
+}
+
+html,
+body{
+  margin:0;
+  padding:0;
+  font-family:Arial,Helvetica,sans-serif;
+  background:#f7f7f7;
+  color:#111;
+}
+
+a{
+  text-decoration:none;
+  color:inherit;
+}
+
+/* =========================
+   TOP HEADER
+   ========================= */
+
+.top{
+  position:sticky;
+  top:0;
+  z-index:20;
+  min-height:64px;
+  background:#fff;
+  border-bottom:1px solid #ddd;
+  display:flex;
+  align-items:center;
+  gap:18px;
+  padding:0 18px;
+}
+
+.logo{
+  font-size:23px;
+  font-weight:800;
+  white-space:nowrap;
+}
+
+.search{
+  display:flex;
+  flex:1;
+  max-width:680px;
+  margin:auto;
+}
+
+.search input{
+  flex:1;
+  border:1px solid #bbb;
+  border-right:0;
+  border-radius:22px 0 0 22px;
+  padding:11px 16px;
+  font-size:15px;
+  outline:none;
+}
+
+.search input:focus{
+  border-color:#888;
+}
+
+.search button{
+  border:1px solid #bbb;
+  background:#eee;
+  border-radius:0 22px 22px 0;
+  padding:0 20px;
+  cursor:pointer;
+}
+
+.search button:hover{
+  background:#ddd;
+}
+
+.actions{
+  display:flex;
+  align-items:center;
+  gap:9px;
+}
+
+.btn{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  border:1px solid #bbb;
+  background:#fff;
+  border-radius:8px;
+  padding:9px 13px;
+  cursor:pointer;
+  font-size:14px;
+}
+
+.btn:hover{
+  background:#f1f1f1;
+}
+
+/* =========================
+   LAYOUT
+   ========================= */
+
+.layout{
+  display:flex;
+  min-height:calc(100vh - 64px);
+}
+
+.side{
+  width:210px;
+  background:#fff;
+  border-right:1px solid #ddd;
+  padding:18px 10px;
+  flex:none;
+}
+
+.side a{
+  display:block;
+  padding:12px 14px;
+  border-radius:9px;
+  margin-bottom:4px;
+}
+
+.side a:hover{
+  background:#eee;
+}
+
+.main{
+  flex:1;
+  padding:22px;
+  min-width:0;
+}
+
+/* =========================
+   CATEGORY CHIPS
+   ========================= */
+
+.chips{
+  display:flex;
+  gap:9px;
+  overflow:auto;
+  margin-bottom:20px;
+}
+
+.chip{
+  background:#4aa8ff;
+  color:#fff;
+  border:1px solid #4aa8ff;
+  border-radius:18px;
+  padding:9px 15px;
+  white-space:nowrap;
+  font-weight:600;
+  box-shadow:0 2px 6px rgba(74,168,255,.25);
+  transition:.18s ease;
+}
+
+.chip:hover{
+  background:#258fe8;
+  border-color:#258fe8;
+  transform:translateY(-1px);
+  box-shadow:0 4px 10px rgba(74,168,255,.35);
+}
+
+/* =========================
+   PANEL
+   ========================= */
+
+.panel{
+  background:#fff;
+  border:1px solid #e1e1e1;
+  border-radius:12px;
+  padding:18px;
+}
+
+.panel h1{
+  font-size:22px;
+  margin:0 0 18px;
+}
+
+/* =========================
+   VIDEO GRID
+   ========================= */
+
+.grid{
+  display:grid;
+  grid-template-columns:repeat(4,minmax(0,1fr));
+  gap:24px 16px;
+}
+
+.card{
+  min-width:0;
+  overflow:hidden;
+}
+
+.card > a{
+  display:block;
+}
+
+.thumb{
+  display:block;
+  width:100%;
+  aspect-ratio:16/9;
+  object-fit:cover;
+  background:#ddd;
+  border-radius:9px;
+  overflow:hidden;
+}
+
+.thumb img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  display:block;
+}
+
+.ct{
+  font-weight:700;
+  line-height:1.3;
+  display:block;
+  margin-top:9px;
+}
+
+.meta{
+  display:flex;
+  gap:10px;
+  margin-top:9px;
+}
+
+.avatar{
+  width:36px;
+  height:36px;
+  border-radius:50%;
+  object-fit:cover;
+  background:#ddd;
+  flex:none;
+}
+
+.muted{
+  color:#666;
+  font-size:13px;
+  line-height:1.45;
+}
+
+/* =========================
+   FORMS
+   ========================= */
+
+.form{
+  max-width:560px;
+}
+
+.field{
+  margin-bottom:14px;
+}
+
+.field label{
+  display:block;
+  font-weight:700;
+  margin-bottom:6px;
+}
+
+.field input,
+.field textarea,
+.field select{
+  width:100%;
+  border:1px solid #bbb;
+  border-radius:8px;
+  padding:11px;
+  font-size:15px;
+  background:#fff;
+}
+
+.field textarea{
+  min-height:120px;
+  resize:vertical;
+}
+
+.notice{
+  padding:10px;
+  border-radius:8px;
+  background:#f1f1f1;
+  margin-bottom:14px;
+}
+
+/* =========================
+   WATCH PAGE
+   ========================= */
+
+.watch{
+  padding:18px;
+}
+
+.watchgrid{
+  display:grid;
+  grid-template-columns:minmax(0,2fr) minmax(260px,1fr);
+  gap:20px;
+}
+
+.player{
+  width:100%;
+  max-height:72vh;
+  background:#000;
+  border-radius:10px;
+}
+
+.watch h1{
+  font-size:23px;
+  margin:12px 0 7px;
+}
+
+/* =========================
+   WATCH CREATOR
+   ========================= */
+
+.watch-creator{
+  display:flex;
+  align-items:center;
+  gap:10px;
+  margin:12px 0;
+}
+
+.watch-creator-avatar{
+  width:36px !important;
+  height:36px !important;
+  min-width:36px !important;
+  max-width:36px !important;
+  min-height:36px !important;
+  max-height:36px !important;
+  border-radius:50%;
+  object-fit:cover;
+  background:#eee;
+  display:block;
+  flex:none;
+}
+
+.watch-avatar-empty{
+  border:1px solid #ddd;
+}
+
+.watch-creator-info{
+  min-width:0;
+}
+
+/* =========================
+   ACTION BUTTONS
+   ========================= */
+
+.actionsrow{
+  display:flex;
+  align-items:center;
+  gap:10px;
+  flex-wrap:wrap;
+  margin:16px 0 20px;
+}
+
+.actionsrow .btn{
+  min-height:42px;
+  padding:10px 17px;
+  border:1px solid #d5d5d5;
+  border-radius:10px;
+  background:#fff;
+  color:#222;
+  font-size:14px;
+  font-weight:600;
+  cursor:pointer;
+  box-shadow:0 2px 5px rgba(0,0,0,.06);
+  transition:all .18s ease;
+}
+
+.actionsrow .btn:hover{
+  transform:translateY(-1px);
+  box-shadow:0 4px 12px rgba(0,0,0,.12);
+  background:#f6f6f6;
+}
+
+.actionsrow .btn:active{
+  transform:translateY(0);
+}
+
+/* LIKE */
+
+#likeBtn{
+  background:#111;
+  color:#fff;
+  border-color:#111;
+}
+
+#likeBtn:hover{
+  background:#2b2b2b;
+  border-color:#2b2b2b;
+}
+
+/* SUBSCRIBE */
+
+#subscribeBtn{
+  background:#e62117;
+  color:#fff;
+  border-color:#e62117;
+}
+
+#subscribeBtn:hover{
+  background:#c91c14;
+  border-color:#c91c14;
+}
+
+/* EDIT */
+
+#editBtn{
+  background:#fff;
+  color:#333;
+  border-color:#ccc;
+}
+
+#editBtn:hover{
+  background:#f3f3f3;
+}
+
+/* DELETE */
+
+#deleteBtn,
+.actionsrow .danger{
+  background:#fff;
+  color:#c62828;
+  border-color:#e0a5a5;
+}
+
+#deleteBtn:hover,
+.actionsrow .danger:hover{
+  background:#fff1f1;
+  border-color:#c62828;
+}
+
+/* =========================
+   COMMENTS
+   ========================= */
+
+.comments{
+  margin-top:24px;
+}
+
+.comment{
+  display:block;
+  padding:13px 0;
+  border-bottom:1px solid #eee;
+}
+
+.comment-user{
+  display:flex;
+  align-items:center;
+  gap:8px;
+  margin-bottom:6px;
+}
+
+.comment-avatar{
+  width:32px !important;
+  height:32px !important;
+  min-width:32px !important;
+  max-width:32px !important;
+  min-height:32px !important;
+  max-height:32px !important;
+  border-radius:50%;
+  object-fit:cover;
+  background:#eee;
+  display:block;
+  flex:none;
+}
+
+.comment-avatar-empty{
+  border:1px solid #ddd;
+}
+
+.comment-user-info{
+  min-width:0;
+}
+
+.comment-body{
+  margin-left:40px;
+  line-height:1.5;
+}
+
+#commentForm{
+  display:flex;
+  gap:10px;
+  margin-top:15px;
+}
+
+#commentInput{
+  flex:1;
+  min-width:0;
+  border:1px solid #ccc;
+  border-radius:10px;
+  padding:11px 14px;
+  font-size:14px;
+  outline:none;
+  background:#fff;
+  transition:.18s ease;
+}
+
+#commentInput:focus{
+  border-color:#888;
+  box-shadow:0 0 0 3px rgba(0,0,0,.06);
+}
+
+#commentForm .btn{
+  min-width:95px;
+  background:#111;
+  color:#fff;
+  border-color:#111;
+}
+
+#commentForm .btn:hover{
+  background:#292929;
+}
+
+/* =========================
+   CHANNEL PAGE
+   ========================= */
+
+.channel-head{
+  display:flex;
+  align-items:center;
+  gap:18px;
+  padding:10px 0 22px;
+}
+
+.channel-head > div{
+  min-width:0;
+  flex:1;
+}
+
+/* PROFILE PICTURE */
+
+.channel-head .channel-avatar{
+  width:76px !important;
+  height:76px !important;
+  min-width:76px !important;
+  max-width:76px !important;
+  min-height:76px !important;
+  max-height:76px !important;
+  border-radius:50%;
+  object-fit:cover;
+  background:#ddd;
+  display:block;
+  flex:none;
+}
+
+.channel-head h1{
+  margin:0 0 5px;
+  font-size:25px;
+}
+
+.channel-head .muted{
+  margin-top:4px;
+}
+
+/* CHANNEL STATS */
+
+.stats{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:10px;
+  margin:15px 0;
+}
+
+.stat{
+  background:#f1f1f1;
+  border-radius:9px;
+  padding:15px;
+}
+
+.stat b{
+  display:block;
+  font-size:22px;
+  margin-top:4px;
+}
+
+/* =========================
+   TABLE
+   ========================= */
+
+.table{
+  width:100%;
+  border-collapse:collapse;
+}
+
+.table th,
+.table td{
+  text-align:left;
+  padding:10px;
+  border-bottom:1px solid #ddd;
+}
+
+/* =========================
+   ROW
+   ========================= */
+
+.row{
+  display:flex;
+  gap:10px;
+  align-items:center;
+}
+
+.row > *{
+  flex:1;
+}
+
+/* =========================
+   STATUS
+   ========================= */
+
+.danger{
+  border-color:#c44;
+  color:#a00;
+}
+
+.success{
+  color:#087b35;
+}
+
+.error{
+  color:#b00020;
+}
+
+/* =========================
+   HOME VIDEO CARD
+   ========================= */
+
+.grid .card img{
+  width:100%;
+  display:block;
+}
+
+.grid .card .ct{
+  overflow:hidden;
+  text-overflow:ellipsis;
+  white-space:nowrap;
+}
+
+.grid .card .muted{
+  overflow:hidden;
+  text-overflow:ellipsis;
+  white-space:nowrap;
+}
+
+/* =========================
+   TABLET
+   ========================= */
+
+@media(max-width:1000px){
+
+  .grid{
+    grid-template-columns:repeat(3,minmax(0,1fr));
+  }
+
+  .side{
+    width:175px;
+  }
+
+  .watchgrid{
+    grid-template-columns:1fr;
+  }
+
+}
+
+/* =========================
+   MOBILE
+   ========================= */
+
+@media(max-width:800px){
+
+  .side{
+    display:none;
+  }
+
+  .top{
+    height:auto;
+    min-height:56px;
+    padding:8px 10px;
+    gap:8px;
+    flex-wrap:wrap;
+  }
+
+  .logo{
+    font-size:19px;
+  }
+
+  .search{
+    order:3;
+    flex-basis:100%;
+    width:100%;
+    max-width:none;
+  }
+
+  .search input{
+    min-width:0;
+    width:100%;
+    padding:10px 13px;
+  }
+
+  .search button{
+    padding:0 15px;
+  }
+
+  .actions{
+    margin-left:auto;
+  }
+
+  .actions .optional{
+    display:none;
+  }
+
+  .main{
+    padding:14px 10px;
+  }
+
+  .chips{
+    gap:7px;
+    margin-bottom:18px;
+    padding-bottom:3px;
+  }
+
+  .chip{
+    padding:8px 12px;
+    font-size:14px;
+  }
+
+  .grid{
+    grid-template-columns:repeat(2,minmax(0,1fr));
+    gap:18px 9px;
+  }
+
+  .thumb{
+    border-radius:7px;
+  }
+
+  .meta{
+    gap:8px;
+    margin-top:7px;
+  }
+
+  .avatar{
+    width:30px;
+    height:30px;
+  }
+
+  .ct{
+    font-size:14px;
+  }
+
+  .muted{
+    font-size:12px;
+  }
+
+  .panel{
+    padding:14px;
+    border-radius:9px;
+  }
+
+  .row{
+    display:block;
+  }
+
+  .row > *{
+    width:100%;
+    margin-bottom:10px;
+  }
+
+  .watch{
+    padding:10px;
+  }
+
+  .watchgrid{
+    grid-template-columns:1fr;
+    gap:15px;
+  }
+
+  .player{
+    max-height:none;
+    border-radius:7px;
+  }
+
+  /* WATCH CREATOR MOBILE */
+
+  .watch-creator{
+    gap:8px;
+    margin:10px 0;
+  }
+
+  .watch-creator-avatar{
+    width:34px !important;
+    height:34px !important;
+    min-width:34px !important;
+    max-width:34px !important;
+    min-height:34px !important;
+    max-height:34px !important;
+  }
+
+  /* COMMENTS MOBILE */
+
+  .comment-avatar{
+    width:30px !important;
+    height:30px !important;
+    min-width:30px !important;
+    max-width:30px !important;
+    min-height:30px !important;
+    max-height:30px !important;
+  }
+
+  .comment-body{
+    margin-left:38px;
+  }
+
+  /* CHANNEL MOBILE */
+
+  .channel-head{
+    padding:18px 0;
+    gap:14px;
+  }
+
+  .channel-head .channel-avatar{
+    width:64px !important;
+    height:64px !important;
+    min-width:64px !important;
+    max-width:64px !important;
+    min-height:64px !important;
+    max-height:64px !important;
+  }
+
+  .channel-head h1{
+    font-size:21px;
+  }
+
+  .stats{
+    grid-template-columns:1fr 1fr;
+    gap:8px;
+  }
+
+  .stat{
+    padding:13px;
+  }
+
+  .stat b{
+    font-size:20px;
+  }
+
+  .table{
+    font-size:13px;
+    display:block;
+    overflow-x:auto;
+    white-space:nowrap;
+  }
+
+  .form{
+    width:100%;
+  }
+
+  .field input,
+  .field textarea,
+  .field select{
+    font-size:16px;
+  }
+
+  .btn{
+    padding:9px 13px;
+  }
+
+  .actionsrow{
+    gap:8px;
+  }
+
+  .actionsrow .btn{
+    flex:1 1 auto;
+    min-height:40px;
+    padding:9px 13px;
+    font-size:13px;
+  }
+
+  #commentForm{
+    flex-direction:column;
+  }
+
+  #commentForm .btn{
+    width:100%;
+  }
+
+}
+
+/* =========================
+   SMALL PHONE
+   ========================= */
+
+@media(max-width:420px){
+
+  .grid{
+    grid-template-columns:1fr;
+  }
+
+  .logo{
+    font-size:18px;
+  }
+
+  .actions .btn{
+    padding:8px 11px;
+  }
+
+  .stats{
+    grid-template-columns:1fr;
+  }
+
+  .main{
+    padding:10px 8px;
+  }
+
+  .panel{
+    padding:12px;
+  }
+
+  .channel-head{
+    gap:12px;
+  }
+
+  .channel-head .channel-avatar{
+    width:58px !important;
+    height:58px !important;
+    min-width:58px !important;
+    max-width:58px !important;
+    min-height:58px !important;
+    max-height:58px !important;
+  }
+
+  .channel-head h1{
+    font-size:19px;
+  }
+
+  /* WATCH CREATOR SMALL PHONE */
+
+  .watch-creator-avatar{
+    width:32px !important;
+    height:32px !important;
+    min-width:32px !important;
+    max-width:32px !important;
+    min-height:32px !important;
+    max-height:32px !important;
+  }
+
+  .comment-avatar{
+    width:28px !important;
+    height:28px !important;
+    min-width:28px !important;
+    max-width:28px !important;
+    min-height:28px !important;
+    max-height:28px !important;
+  }
+
+  .comment-body{
+    margin-left:36px;
+  }
+
+}.studio-title h1 span {
+  color: #111111;
+}
+
+.studio-title h1 strong {
+  color: #e3262e;
+}

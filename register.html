@@ -1,0 +1,218 @@
+<!doctype html>
+
+<html lang="en">
+
+<head>
+
+  <meta charset="utf-8">
+
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+
+  <title>Create Account • StreamTube</title>
+
+  <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+<header class="top">
+
+  <a class="logo" href="index.html">
+    StreamTube
+  </a>
+
+  <div class="search">
+
+    <input
+      id="searchInput"
+      placeholder="Search"
+      autocomplete="off"
+    >
+
+    <button id="searchBtn" type="button">
+      Search
+    </button>
+
+  </div>
+
+  <div class="actions" id="actions"></div>
+
+</header>
+
+
+<main class="main">
+
+  <section
+    class="panel form"
+    style="
+      max-width:480px;
+      margin:40px auto;
+      padding:30px;
+      border-radius:12px;
+      box-shadow:0 2px 10px rgba(0,0,0,.08);
+      background:#fff;
+    "
+  >
+
+    <div style="
+      text-align:center;
+      margin-bottom:25px;
+    ">
+
+      <h1 style="
+        margin:0 0 8px;
+        font-size:30px;
+      ">
+        Create Account
+      </h1>
+
+      <p class="muted" style="
+        margin:0;
+        font-size:14px;
+      ">
+        Join StreamTube and start sharing your videos
+      </p>
+
+    </div>
+
+
+    <div id="msg"></div>
+
+
+    <form id="form">
+
+      <div class="field">
+
+        <label>
+          Name
+        </label>
+
+        <input
+          name="name"
+          type="text"
+          placeholder="Enter your name"
+          autocomplete="name"
+          required
+        >
+
+      </div>
+
+
+      <div class="field">
+
+        <label>
+          Username
+        </label>
+
+        <input
+          name="username"
+          type="text"
+          placeholder="Choose a username"
+          autocomplete="username"
+          required
+        >
+
+      </div>
+
+
+      <div class="field">
+
+        <label>
+          Email
+        </label>
+
+        <input
+          type="email"
+          name="email"
+          placeholder="Enter your email"
+          autocomplete="email"
+          required
+        >
+
+      </div>
+
+
+      <div class="field">
+
+        <label>
+          Password
+        </label>
+
+        <input
+          type="password"
+          name="password"
+          placeholder="Create a password"
+          minlength="8"
+          autocomplete="new-password"
+          required
+        >
+
+        <div class="muted" style="
+          font-size:12px;
+          margin-top:6px;
+        ">
+          Password must be at least 8 characters.
+        </div>
+
+      </div>
+
+
+      <button
+        type="submit"
+        style="
+          width:100%;
+          padding:12px 16px;
+          margin-top:8px;
+          border:1px solid #ff2b2b;
+          border-radius:7px;
+          background:#ff2b2b;
+          color:#fff;
+          font-size:16px;
+          font-weight:600;
+          cursor:pointer;
+          box-shadow:0 2px 5px rgba(0,0,0,.12);
+        "
+      >
+        Create Account
+      </button>
+
+    </form>
+
+
+    <p
+      class="muted"
+      style="
+        text-align:center;
+        margin-top:22px;
+        margin-bottom:0;
+      "
+    >
+
+      Already have an account?
+
+      <a
+        href="login.html"
+        style="
+          font-weight:600;
+          color:#ff2b2b;
+          text-decoration:none;
+        "
+      >
+        Login
+      </a>
+
+    </p>
+
+  </section>
+
+</main>
+
+
+<script src="app.js"></script>
+
+<script src="register-handler.js"></script>
+
+</body>
+
+</html>

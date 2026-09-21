@@ -1,0 +1,127 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>StreamTube</title>
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<header class="top">
+
+<a class="logo" href="index.html" style="
+  font-size:28px;
+  font-weight:800;
+  text-decoration:none;
+  letter-spacing:-0.5px;
+  text-shadow:0 0 6px rgba(74,168,255,.45);
+">
+  <span style="
+    color:#4aa8ff;
+    text-shadow:0 0 8px rgba(74,168,255,.65);
+  ">Stream</span><span style="
+    color:#ff2b2b;
+    text-shadow:0 0 8px rgba(255,43,43,.55);
+  ">Tube</span>
+</a>
+
+<div class="search">
+<input id="searchInput" placeholder="Search">
+<button id="searchBtn" style="
+  background:#ff2b2b;
+  color:#fff;
+  border:1px solid #ff2b2b;
+  border-radius:6px;
+  font-weight:600;
+  cursor:pointer;
+  box-shadow:0 2px 5px rgba(255,43,43,.25);
+">
+  Search
+</button>
+</div>
+
+<div class="actions" id="actions"></div>
+
+</header>
+
+
+<div class="layout">
+
+<aside class="side">
+
+<a href="index.html">🏠 Home</a>
+<a href="index.html?category=Trending">🔥 Trending</a>
+<a href="upload.html">⬆️ Upload</a>
+<a href="dashboard.html">📊 Studio</a>
+<a href="login.html">👤 Account</a>
+
+</aside>
+
+
+<main class="main">
+
+
+<div class="chips">
+
+<a class="chip" href="index.html">All</a>
+
+<a class="chip" href="index.html?category=Music">
+Music
+</a>
+
+<a class="chip" href="index.html?category=Gaming">
+Gaming
+</a>
+
+<a class="chip" href="index.html?category=Education">
+Education
+</a>
+
+<a class="chip" href="index.html?category=Comedy">
+Comedy
+</a>
+
+<a class="chip" href="index.html?category=News">
+News
+</a>
+
+</div>
+
+
+
+<section class="panel">
+
+<h1 id="pageTitle">
+Latest videos
+</h1>
+
+
+<div id="videos" class="grid">
+
+<p class="muted">
+Loading videos...
+</p>
+
+</div>
+
+
+</section>
+
+
+</main>
+
+</div>
+
+
+
+<script src="app.js"></script>
+
+<script src="home.js"></script>
+
+
+</body>
+
+</html>

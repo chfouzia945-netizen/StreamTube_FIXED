@@ -1,0 +1,187 @@
+<!doctype html>
+
+<html lang="en">
+
+<head>
+
+  <meta charset="utf-8">
+
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+
+  <title>Login • StreamTube</title>
+
+  <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+
+<header class="top">
+
+  <a class="logo" href="index.html">
+    StreamTube
+  </a>
+
+
+  <div class="search">
+
+    <input
+      id="searchInput"
+      placeholder="Search"
+      autocomplete="off"
+    >
+
+    <button id="searchBtn" type="button">
+      Search
+    </button>
+
+  </div>
+
+
+  <div class="actions" id="actions"></div>
+
+</header>
+
+
+<main class="main">
+
+
+  <section
+    class="panel form"
+    style="
+      max-width:460px;
+      margin:40px auto;
+      padding:30px;
+      border-radius:12px;
+      box-shadow:0 2px 10px rgba(0,0,0,.08);
+      background:#fff;
+    "
+  >
+
+
+    <div style="
+      text-align:center;
+      margin-bottom:25px;
+    ">
+
+      <h1 style="
+        margin:0 0 8px;
+        font-size:30px;
+      ">
+        Welcome Back
+      </h1>
+
+
+      <p class="muted" style="
+        margin:0;
+        font-size:14px;
+      ">
+        Login to your StreamTube account
+      </p>
+
+    </div>
+
+
+    <div id="msg"></div>
+
+
+    <form id="form">
+
+
+      <div class="field">
+
+        <label>
+          Email or Username
+        </label>
+
+        <input
+          name="login"
+          type="text"
+          placeholder="Enter your email or username"
+          autocomplete="username"
+          required
+        >
+
+      </div>
+
+
+      <div class="field">
+
+        <label>
+          Password
+        </label>
+
+        <input
+          type="password"
+          name="password"
+          placeholder="Enter your password"
+          autocomplete="current-password"
+          required
+        >
+
+      </div>
+
+
+      <button
+        type="submit"
+        style="
+          width:100%;
+          padding:12px 16px;
+          margin-top:8px;
+          border:1px solid #ff2b2b;
+          border-radius:7px;
+          background:#ff2b2b;
+          color:#fff;
+          font-size:16px;
+          font-weight:600;
+          cursor:pointer;
+          box-shadow:0 2px 5px rgba(0,0,0,.12);
+        "
+      >
+        Login
+      </button>
+
+
+    </form>
+
+
+    <p
+      class="muted"
+      style="
+        text-align:center;
+        margin-top:22px;
+        margin-bottom:0;
+      "
+    >
+
+      Don't have an account?
+
+      <a
+        href="register.html"
+        style="
+          font-weight:600;
+          color:#ff2b2b;
+          text-decoration:none;
+        "
+      >
+        Create Account
+      </a>
+
+    </p>
+
+
+  </section>
+
+
+</main>
+
+
+<script src="app.js"></script>
+
+<script src="login-handler.js"></script>
+
+
+</body>
+
+</html>
