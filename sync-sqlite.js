@@ -9,7 +9,7 @@ class Database {
   call(op, sql, args) {
     const input = JSON.stringify(args || []);
     const out = cp.execFileSync(
-      "C:\\Python27\\python.exe",
+     "python3",
       [path.join(__dirname, "sqlite_bridge.py"), this.file, op, sql || "", input],
       { encoding: "utf8" }
     );
