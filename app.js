@@ -72,19 +72,6 @@ function card(v){
   );
 }
 
-  return (
-    '<div class="video-card">'+
-      '<a href="watch.html?id='+v.id+'" class="video-link">'+
-        '<div class="thumb">'+
-          '<img src="'+img+'" class="thumb-img" alt="">'+
-        '</div>'+
-        '<h3>'+esc(v.title)+'</h3>'+
-        '<p class="muted">'+esc(v.creator_name||"")+'</p>'+
-        '<p class="muted">'+Number(v.views||0).toLocaleString()+' views</p>'+
-      '</a>'+
-    '</div>'
-  );
-}
 async function me(){
 
   try{
