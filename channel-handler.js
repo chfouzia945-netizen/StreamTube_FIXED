@@ -6,8 +6,19 @@ async function loadChannel() {
 
     var u = new URLSearchParams(location.search).get("username");
 
+    /*
+      Agar URL mein username nahi hai,
+      to logged-in user ka apna channel load hoga.
+    */
     if (!u) {
-      throw Error("Channel not specified");
+
+      var current = await me();
+
+      if (!current || !current.username) {
+        throw Error("Please login to view your channel.");
+      }
+
+      u = current.username;
     }
 
     var d = await api(
