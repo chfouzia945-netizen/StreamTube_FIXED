@@ -32,6 +32,46 @@ function card(v){
     img = "/media/thumbs/" + esc(v.thumbnail);
   }
 
+  var creator = esc(v.creator_name || "");
+
+  var channelLink = "";
+
+  if(v.creator_username){
+    channelLink =
+      '<a href="channel.html?username=' +
+      encodeURIComponent(v.creator_username) +
+      '" class="muted" style="text-decoration:none;">' +
+      creator +
+      '</a>';
+  }else{
+    channelLink =
+      '<span class="muted">' +
+      creator +
+      '</span>';
+  }
+
+  return (
+    '<div class="video-card">'+
+      '<a href="watch.html?id='+v.id+'" class="video-link">'+
+        '<div class="thumb">'+
+          '<img src="'+img+'" class="thumb-img" alt="">'+
+        '</div>'+
+        '<h3>'+esc(v.title)+'</h3>'+
+      '</a>'+
+
+      '<p class="muted">'+
+        channelLink+
+      '</p>'+
+
+      '<p class="muted">'+
+        Number(v.views||0).toLocaleString()+
+        ' views'+
+      '</p>'+
+
+    '</div>'
+  );
+}
+
   return (
     '<div class="video-card">'+
       '<a href="watch.html?id='+v.id+'" class="video-link">'+
