@@ -448,4 +448,4 @@ app.get("/media/video/:id",optionalAuth,function(req,res){
 
 app.use("/media/thumbs",express.static(TH));
 
-app.use(express.static(path.join(ROOT,"public"),{extensions:["html"]}));
+app.use(express.static(ROOT,{extensions:["html"]}));
